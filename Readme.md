@@ -95,6 +95,17 @@ It had been used just one model for the results, every model output had been sen
 
 The original data was obtained from the DrivenData 'Pump it Up: Data Mining the Water Table' competition. Basically, there are 4 different data sets; submission format, training set, test set and train labels set which contains status of wells. With given training set and labels set, competitors are wanted to build predictive model and apply it to test set to determine status of the wells and submit.
 
+**To run the project**
+
+Download the data set from [1] and put them into the input directory, change directory to the project directory, then run\
+`$ python cross_validation.py`\
+`$ sh train.sh XGBClassifier`
+
+then the training model result is displayed,\
+`$ sh predict.sh`
+
+A submission csv file is generates to upload to the project website for evaluation.
+
 **Bibliography**
 
 [1] Tanzania Ministry of Water & Data Driven. (n.d.). Pump it Up: Data Mining the Water Table. Pump It Up: Data Mining the Water Table. Retrieved 2015, from https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/page/23/
