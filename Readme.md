@@ -15,36 +15,36 @@ The result of the project was uploaded in order to score the predictions, which 
 
 **Dataset description**
 
-The data had been collected using an open source web app named “Taarifa”. The data for the training has 59.400 rows and 40 columns without the label that comes in a separate file, in the case of testing data it has 14.850 rows. The description of each column is found in [1]. The name of the target is “status_group” that has three possible values functional, non-functional, and functional but it needs to repair.
+The data had been collected using an open source web app named “Taarifa”. The data for the training has 59.400 rows and 40 columns without the label that comes in a separate file, in the case of testing data it has 14.850 rows. The description of each column is found in [1]. The name of the target is _status_group_ that has three possible values functional, non-functional, and functional but it needs to repair.
 
 
 **Exploratory Data Analysis**
 
 The exploratory data analysis was performed by analyzing the context of the problem and the characteristics of the variables as observed in the directory of the project, in this case “Exploration.ipynb” in the notebooks directory of the project. The target variable has three possible outcomes:
  
-* Functional
-* Non-functional
-* Functional but it needs to repair.
+* _Functional_
+* _Non-functional_
+* _Functional but it needs to repair_
 
-It’s interesting to see these three outcomes, because they describes three potentials problem that may give some insight for a proper decision making. It can be seen that the dataset is not balanced, “Functional” has the most cases followed by “Non-functional” and “Functional but it needs repair “with less cases.
+It’s interesting to see these three outcomes, because they describes three potentials problem that may give some insight for a proper decision making. It can be seen that the dataset is not balanced, "Functional" has the most cases followed by "Non-functional" and "Functional but it needs repair" with less cases.
 
 Because of the metric used for this competition is “Accuracy”, the data imbalance has to be solved, because it can be an issue that limit the prediction power of the model used. The initial strategy had been to analyze individually every feature and also in related group of features depending on its characteristics.
 
-The feature amount_tsh that is the total static head (amount water available to waterpoint), is skewed that is why log had been used to smooth it. In the case of the features date_recorded, gps_height, longitude and latitude were used as such, just in the case of date it had been taken the month and year of it.
+The feature _amount_tsh_ that is the total static head (amount water available to waterpoint), is skewed that is why log had been used to smooth it. In the case of the features _date_recorded_, _gps_height_, _longitude_ and _latitude_ were used as such, just in the case of date it had been taken the month and year of it.
 
-It had been created a couple of features as part of the feature engineering part. The first case was related to date construction_year, which had been subtracted from date_recorded, in order to identify how old that wells are, and also in the case of amount of well water related to population it had been divided amount_tsh by population, in these cases some processing had been done at the beginning. By the way, it had been found that the older the water pump the more likely it will require repair.
+It had been created a couple of features as part of the feature engineering part. The first case was related to date _construction_year_, which had been subtracted from _date_recorded_, in order to identify how old that wells are, and also in the case of amount of well water related to population it had been divided _amount_tsh_ by _population_, in these cases some processing had been done at the beginning. By the way, it had been found that the older the water pump the more likely it will require repair.
 
-In the case of funder and installer, they have lots of different values in each one of them, that is why by looking at its frequencies, it had been decided to reduce to just the 20 most frequent values in these cases, a reference that helped us in this case is [2]. And also it had been noticed that one missing funder is also missing installer, that is why the null imputer was similar in these cases.
+In the case of _funder_ and _installer_, they have lots of different values in each one of them, that is why by looking at its frequencies, it had been decided to reduce to just the 20 most frequent values in these cases, a reference that helped us in this case is [2]. And also it had been noticed that one missing funder is also missing installer, that is why the null imputer was similar in these cases.
 
 In the case of the following features related to location:
 
-* basin
-* subvillage
-* region
-* region_code
-* district_code
-* lga
-* ward
+* _basin
+* _subvillage
+* _region
+* _region_code
+* _district_code
+* _lga
+* _ward
 
 It is found that most of them are very closely related, that is why some of these features had been deleted as it is observed down below in this document.
 
