@@ -38,50 +38,50 @@ In the case of _funder_ and _installer_, they have lots of different values in e
 
 In the case of the following features related to location:
 
-* _basin
-* _subvillage
-* _region
-* _region_code
-* _district_code
-* _lga
-* _ward
+* _basin_
+* _subvillage_
+* _region_
+* _region_code_
+* _district_code_
+* _lga_
+* _ward_
 
 It is found that most of them are very closely related, that is why some of these features had been deleted as it is observed down below in this document.
 
-It had been identified that there is high correlation among groups of categorical features, in lots of cases the correlation raised to one. The main reason why this happens is that the information is repeated, for example, in the case of waterpoint_type and waterpoint_type_group, basically they have same information, that is why it had been decided to delete the following features:
+It had been identified that there is high correlation among groups of categorical features, in lots of cases the correlation raised to one. The main reason why this happens is that the information is repeated, for example, in the case of _waterpoint_type_ and _waterpoint_type_group_, basically they have same information, that is why it had been decided to delete the following features:
 
-* Region
-* Lga
-* Ward
-* Extraction_type_group
-* Management_group
-* Payment
-* Water_quality
-* Quantity_group
-* Source_type
-* Waterpoint_type_group
+* _Region_
+* _Lga_
+* _Ward_
+* _Extraction_type_group_
+* _Management_group_
+* _Payment_
+* _Water_quality_
+* _Quantity_group_
+* _Source_type_
+* _Waterpoint_type_group_
 
 With the rest of categorical features that is a relevant quantity, it had been decided to apply one-hot encoding in the cases in which the number of different feature values was below 50 different feature values, which are the following:
 
-* funder_cat
-* basin
-* installer_cat
-* public_meeting
-* scheme_management
-* permit
-* extraction_type
-* extraction_type_class
-* management
-* payment_type
-* quality_group
-* quantity
-* source
-* source_class
-* waterpoint_type
+* _funder_cat_
+* _basin_
+* _installer_cat_
+* _public_meeting_
+* _scheme_management_
+* _permit_
+* _extraction_type_
+* _extraction_type_class_
+* _management_
+* _payment_type_
+* _quality_group_
+* _quantity_
+* _source_
+* _source_class_
+* _waterpoint_type_
 
 **Imbalance data**
 
-One of the most important problems found in this dataset was the imbalance data fount in the target feature status_group, specifically in the case of the performance metric that was “Accuracy”, in this particular case, the metric needs to have a balanced target. That is why it had been used the function SMOTE which balances the target values in order to have the same quantities in every target feature value. In this case it had been used oversampling for the processing. 
+One of the most important problems found in this dataset was the imbalance data fount in the target feature _status_group_, specifically in the case of the performance metric that was “Accuracy”, in this particular case, the metric needs to have a balanced target. That is why it had been used the function SMOTE which balances the target values in order to have the same quantities in every target feature value. In this case it had been used oversampling for the processing. 
 
 **Performance Metric**
 
