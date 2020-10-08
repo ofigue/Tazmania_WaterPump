@@ -109,7 +109,7 @@ change directory to the project directory, then run
 then the training model result is displayed,\
 `$ sh predict.sh`
 
-Then get back to notebooks directory and run
+Then get back to notebooks directory and run\
 `TargetDictionary.ipynb`
 
 A submission csv file is generates to upload to the project website for evaluation.
